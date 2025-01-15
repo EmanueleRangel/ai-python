@@ -12,4 +12,8 @@ pessoas = [('Amanda', 'CWB'),
 destino = 'GRU'
 
 voos = {}
+for linha in open('voos.txt'):
+    _origem, _destino, _saida, _chegada, _preco = linha.strip().split(',')
+    voos.setdefault((_origem, _destino), [])
+    voos[(_origem, _destino)].append((_saida, _chegada, int(_preco)))
 
